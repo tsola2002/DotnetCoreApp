@@ -8,28 +8,14 @@ namespace _01_13_school_tracker
         static void Main(string[] args)
         {
             Console.WriteLine("What is your name?");
-            var name = Console.ReadLine();
-
-            if (name == "")
-            {
-                name = WriteTryAgain();
-            }
+            var name = WriteTryAgain();
 
             Console.WriteLine("What is your age?");
-            var age = Console.ReadLine();
-
-            if (age == "")
-            {
-                age = WriteTryAgain();
-            }
+            var age = WriteTryAgain();
 
             Console.WriteLine("What month were you born in?");
-            var month = Console.ReadLine();
+            var month = WriteTryAgain();
 
-            if (month == "")
-            {
-                month = WriteTryAgain();
-            }
 
             Console.WriteLine("Your name is: {0}", name);
             Console.WriteLine("Your age is: {0}", age);
@@ -49,12 +35,17 @@ namespace _01_13_school_tracker
             }
         }
 
-        // this is a function with no return type
+        // this is a function with a return type of string
         //when a function returns then a function ends
         static string WriteTryAgain()
         {
-            Console.WriteLine("You didn't type anything, please again?");
-            return Console.ReadLine();
+            var answer = Console.ReadLine();
+            if (answer == "")
+            {
+                Console.WriteLine("You didn't type anything, please again?");
+                return Console.ReadLine();
+            }
+            return answer;
         }
     }
 }
