@@ -12,8 +12,7 @@ namespace _01_13_school_tracker
 
             if (name == "")
             {
-                WriteTryAgain();
-                name = Console.ReadLine();
+                name = WriteTryAgain();
             }
 
             Console.WriteLine("What is your age?");
@@ -21,8 +20,7 @@ namespace _01_13_school_tracker
 
             if (age == "")
             {
-                WriteTryAgain();
-                age = Console.ReadLine();
+                age = WriteTryAgain();
             }
 
             Console.WriteLine("What month were you born in?");
@@ -30,8 +28,7 @@ namespace _01_13_school_tracker
 
             if (month == "")
             {
-                WriteTryAgain();
-                month = Console.ReadLine();
+                month = WriteTryAgain();
             }
 
             Console.WriteLine("Your name is: {0}", name);
@@ -53,9 +50,11 @@ namespace _01_13_school_tracker
         }
 
         // this is a function with no return type
-        static void WriteTryAgain()
+        //when a function returns then a function ends
+        static string WriteTryAgain()
         {
             Console.WriteLine("You didn't type anything, please again?");
+            return Console.ReadLine();
         }
     }
 }
