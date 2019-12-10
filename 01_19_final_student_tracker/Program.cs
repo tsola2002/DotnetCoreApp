@@ -6,7 +6,7 @@ namespace _01_19_final_student_tracker
 {
     class Program
     {
-         static void Main(string[] args)
+        static void Main(string[] args)
         {
             Console.WriteLine("How many students in your class?");
             var studentCount = int.Parse(Console.ReadLine());
