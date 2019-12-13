@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace _02_01_object_oriented_programming
+namespace _02_02_encapsulation
 {
     class Program
     {
-        
-
         static void Main(string[] args)
         {
             // we a student list and we make of type student
@@ -34,8 +32,9 @@ namespace _02_01_object_oriented_programming
                 Console.Write("Student Address: ");
                 newStudent.Address = (Console.ReadLine());
 
+                // we make call to the setPhone function to allow use access to the private variable
                 Console.Write("Student Phone Number: ");
-                newStudent.Phone = (int.Parse(Console.ReadLine()));
+                newStudent.setPhone(int.Parse(Console.ReadLine()));
 
                 students.Add(newStudent);
 
@@ -43,12 +42,6 @@ namespace _02_01_object_oriented_programming
 
                 if (Console.ReadLine() != "y")
                     adding = false;
-            }
-
-            //since we have one list now its better that we use the foreach to loop through it
-            foreach( var student in students )
-            {
-                Console.WriteLine("Name: {0}, Grade: {1}", student.Name, student.Grade);
             }
         }
     }
@@ -59,6 +52,13 @@ namespace _02_01_object_oriented_programming
         public int Grade;
         public string Birthday;
         public string Address;
-        public int Phone;
+        private int phone;
+
+        // we create a setter function to allow a access to the private method
+        public void setPhone(int number)
+        {
+           phone = number; 
+        }
+        
     }
 }
