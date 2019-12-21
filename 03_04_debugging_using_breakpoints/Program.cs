@@ -44,7 +44,7 @@ namespace _03_03_custom_exception
                     //the out parameter will give us the result
                     newStudent.Grade = Util.Console.AskInt("Student Grade: ");
 
-                    // refactored the above code to Util class function
+                    // refactored the above code to Util class functionde
                     newStudent.Birthday = Util.Console.Ask("Student Birthday: ");
 
                 // refactored the above code to Util class function
