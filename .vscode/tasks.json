@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/03_04_debugging_using_breakpoints/03_04_debugging_using_breakpoints.csproj",
+                "${workspaceFolder}/04_01_enumerators/04_01_enumerators.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/03_04_debugging_using_breakpoints/03_04_debugging_using_breakpoints.csproj",
+                "${workspaceFolder}/04_01_enumerators/04_01_enumerators.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/03_04_debugging_using_breakpoints/03_04_debugging_using_breakpoints.csproj",
+                "${workspaceFolder}/04_01_enumerators/04_01_enumerators.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

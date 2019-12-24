@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/03_04_debugging_using_breakpoints/bin/Debug/netcoreapp3.0/03_04_debugging_using_breakpoints.dll",
+            "program": "${workspaceFolder}/04_01_enumerators/bin/Debug/netcoreapp3.0/04_01_enumerators.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/03_04_debugging_using_breakpoints",
+            "cwd": "${workspaceFolder}/04_01_enumerators",
             "console": "integratedTerminal",
             "stopAtEntry": false
         },
