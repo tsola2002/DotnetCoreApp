@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _05_01_auto_implemented_property
+namespace _05_03_lambda
 {
-    // we create an Enumerator to index our list of schools
+      // we create an Enumerator to index our list of schools
     // enumerators automatically come with indexes so you dont have to add a number
     enum School
     {
@@ -104,6 +104,8 @@ namespace _05_01_auto_implemented_property
                     Console.WriteLine("Error Adding Student please try again");
                 }
 
+                ShowGrade("Tom");
+
                 foreach (var student in students)
                 {
                     Console.WriteLine("Name: {0}, Grade: {1}", student.Name, student.Grade);
@@ -142,26 +144,82 @@ namespace _05_01_auto_implemented_property
                 }
             } 
         }
+    
+        //we need to a built find feature for which we'll need a predicate function
+        // a predicate is a function that always returns bool
+        static void ShowGrade(string name)
+        {
+            // VERSION 1
+            // we use the find function from our students list
+            //var found = students.Find(predicate);
+            
+            // VERSION 2
+            // arrow syntax will specify that its a lambda statement
+            // we have the function in a compact form inside the parameter of out find call
+            // lambda is also an anonymous function
+
+            // var found = students.Find((student) =>
+            //     {          
+            //         return (student.Name == "Jim");
+            //     });
+
+            // VERSION 3(CONDENSED LAMBDA)
+            var found = students.Find(student => student.Name == name );    
+
+
+            // display the students grade once its been found
+            Console.WriteLine("{0}'s Grade: {1}", found.Name, found.Grade);
+        }
+
+        // static bool predicate(Student student)
+        // {
+        //      VERSION 1
+        //      if (student.Name == "Jim")
+        //          return true;
+        //      else
+        //          return false;
+
+        //      VERSION 2 OPTIMIZED
+        //     return (student.Name == "Jim");
+
+        //      the function just wraps a condition
+        //      its such a specific function that the rest of our program wont using it
+        //      it doesnt reall warrants it s own function
+        //      we should use lambda expression instead
+        // }
+
     }
 
     // this class will unify & abstract the concepts off student & teacher
     class Member
     {
-        // auto implemented proterty does not rely on any protected keyword because it is implemented in the background
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public int Phone { get; set; }
+        public string Name;
+        public string Address;
+        // the protected keyword is like private but it only works with inheritance
+        protected int phone;
 
+        //creating a traditional c-sharp property
+        public int Phone {
+            set 
+            {
+                 phone = value; 
+                 
+                 //Console.WriteLine(phone);
+                 
+                 // test the functionality & output the traditional property
+                 //Console.WriteLine(phone); 
+            }
         }
+    }
 
     //this syntax represents inheritance which means student is inheriting member class
     class Student : Member
     { 
         // creating a static variable
         //static fields are not associated with object instance
-        static public int Count { get; set; } = 0;
-        public int Grade { get; set; }
-        public string Birthday { get; set; }
+        static public int Count = 0;
+        public int Grade;
+        public string Birthday;
 
         public School School;
         
@@ -190,3 +248,4 @@ namespace _05_01_auto_implemented_property
    
 
 }
+
